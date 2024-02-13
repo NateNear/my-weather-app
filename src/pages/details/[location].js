@@ -1,7 +1,7 @@
 // pages/details/[location].js
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, VStack, Link } from '@chakra-ui/react';
 import Layout from '../../components/Layout';
 import { fetchFiveDayForecast } from '../../utils/api';
 
@@ -28,22 +28,32 @@ const WeatherDetails = () => {
 
   return (
     <Layout>
-      <Box p={8} maxW="xl" mx="auto">
+      <Box p={8} maxW="xl" mx="auto" textAlign="center">
         <Heading mb={4}>Weather Details for {location}</Heading>
         {forecastData ? (
-          <div>
+          <VStack spacing={4}>
             {forecastData.map((item) => (
-              <Box key={item.dt} mb={4} borderBottom="1px solid #ccc">
+              <Box
+                key={item.dt}
+                p={4}
+                border="1px solid #ccc"
+                borderRadius="md"
+                boxShadow="md"
+                textAlign="left"
+              >
                 <Text>Date and Time: {item.dt_txt}</Text>
                 <Text>Temperature: {item.main.temp} °C</Text>
                 <Text>Humidity: {item.main.humidity}%</Text>
                 <Text>Description: {item.weather[0].description}</Text>
               </Box>
             ))}
-          </div>
+          </VStack>
         ) : (
           <Text>Loading...</Text>
         )}
+        <Link href={`/search/${encodeURIComponent(location)}`} mt={4} color="teal.500">
+          Back to Search
+        </Link>
       </Box>
     </Layout>
   );
