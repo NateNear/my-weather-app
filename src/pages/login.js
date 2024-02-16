@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
-import { auth } from './firebase-auth/firebase'
+import { auth } from '../firebase-auth/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import Link from 'next/link';
 import { useRouter } from 'next/router';

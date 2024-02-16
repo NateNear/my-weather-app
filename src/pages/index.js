@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { auth } from './firebase-auth/firebase';
+import { auth } from '../firebase-auth/firebase';
 import {
   Box,
   Flex,
