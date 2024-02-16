@@ -1,4 +1,3 @@
-// pages/index.js
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { auth } from './firebase-auth/firebase';
@@ -52,7 +51,6 @@ const Home = () => {
       }
     });
 
-    // Unsubscribe from the auth state observer when the component unmounts
     return () => unsubscribe();
   }, []);
 
@@ -134,7 +132,6 @@ const Home = () => {
           </Flex>
         </Box>
 
-        {/* Profile Button and Logout Menu */}
         <Box           position="fixed"
           top="0"
           right="0"

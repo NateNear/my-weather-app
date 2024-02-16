@@ -39,7 +39,6 @@ import {
               await updateProfile(user, {
                   displayName: values.last_name,
               });
-              //logic to routing to index.js page
               router.push('/');
           })
           .catch((err) => console.log("Error-", err));

@@ -55,7 +55,7 @@ const WeatherDetails = () => {
         ) : (
           <Text>Loading...</Text>
         )}
-        <Link href={`/search/${encodeURIComponent(location)}`} mt={4} fontSize={'x-large'} fontWeight={'800'} color="black.500">
+        <Link href={`/`} mt={4} fontSize={'x-large'} fontWeight={'800'} color="black.500">
           Back to Search
         </Link>
       </Box>
